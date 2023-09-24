@@ -5,6 +5,9 @@ const todoListCollection = client.db('todo').collection('todo_lists');
 
 var workítems = [];
 
+
+
+
 async function getTodoList (req, res) {
     const today = date.getDate();
     const listItems = await todoListCollection.find({}).toArray();
@@ -16,6 +19,9 @@ async function getTodoList (req, res) {
 
   res.render("list", pageData); //render from the list of view folder
 }
+
+
+
 
 async function createTodoItem (req, res) {
     const item = req.body.newItem;
@@ -33,6 +39,9 @@ async function createTodoItem (req, res) {
 
 }
 
+
+
+
 async function getWorkList (req, res) {
     const pageData = {
         listTitle: "Work List",
@@ -41,5 +50,8 @@ async function getWorkList (req, res) {
 
     res.render("list", pageData);
 }
+
+
+
 
 module.exports = {getTodoList, getWorkList, createTodoItem};
