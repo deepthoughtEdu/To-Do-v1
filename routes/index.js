@@ -1,7 +1,8 @@
 const express = require('express');
-const app = express();
 const controllers = require('../controllers');
 const middlewares = require('../middlewares');
+
+const app = express();
 
 // Mounting routes with middlewares and controllers
 app.get("/", controllers.getTodoList)
