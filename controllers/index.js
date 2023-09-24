@@ -9,7 +9,6 @@ async function getTodoList (req, res) {
     const today = date.getDate();
     const listItems = await todoListCollection.find({}).toArray();
 
-    console.log(listItems)
     const pageData = {
         listTitle: today,
         newListItems: listItems
