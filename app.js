@@ -13,7 +13,7 @@ async function setupExpressApp() {
 
     app.use(bodyParser.urlencoded({extended: true})); // Adding bodyparser middleware to parse the request
 
-    app.use(express.static("public")); //to add our static css file to the server
+    app.use(express.static("public")); //to expose/serve the static files of the server for client's usage, such as CSS, JS
 
 
     // Mounting routes
