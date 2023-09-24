@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const app = express();
 
-async function setupExpressApp() {
+function setupExpressApp() {
     app.set("view engine", "ejs") //informing our app that we are going to use ejs
 
     app.use(bodyParser.urlencoded({extended: true})); // Adding bodyparser middleware to parse the request
@@ -21,9 +21,9 @@ async function setupExpressApp() {
 }
 
 
-database.initializeConnection().then(async function () {
+database.initializeConnection().then(function () {
 
-    await setupExpressApp();
+    setupExpressApp();
     
     app.listen(process.env.PORT, function() {
       console.log("Server started on port ", process.env.PORT);
