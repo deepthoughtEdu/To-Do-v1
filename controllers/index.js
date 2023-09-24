@@ -42,16 +42,4 @@ async function createTodoItem (req, res) {
 
 
 
-async function getWorkList (req, res) {
-    const pageData = {
-        listTitle: "Work List",
-        newListItems: workítems
-    };
-
-    res.render("list", pageData);
-}
-
-
-
-
 module.exports = {getTodoList, getWorkList, createTodoItem};

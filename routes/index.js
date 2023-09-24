@@ -9,6 +9,5 @@ app.get("/", controllers.getTodoList)
 
 app.post("/", middlewares.validateRequestBody, controllers.createTodoItem);
 
-app.get("/work", controllers.getWorkList);
 
 module.exports = app;
